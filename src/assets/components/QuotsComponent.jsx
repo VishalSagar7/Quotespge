@@ -10,8 +10,10 @@ const Quotes = () => {
       .then(response => {
           return response.json();
       }).then((data) => {
-          console.log(data.quotes);
-          setQuotes(data.quotes)
+          const newArray = data.quotes
+          const theNewArray = newArray.slice(0,10)
+          console.log(theNewArray);
+          setQuotes(theNewArray)
           
       })
       .catch(error => {
